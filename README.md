@@ -40,7 +40,7 @@ Windows 桌面程序，纯本地运行（除逆地理编码会请求高德），
 
 ### 方式一：直接用打包版（推荐）
 
-到 [Releases](../../releases) 下载 `照片印迹.exe`，双击即用。单文件，不需要装 Python。
+到 [Releases](https://github.com/lp2924/photo-imprint/releases/latest) 下载 `photo-imprint-v1.0.0.exe`，双击即用。单文件，不需要装 Python。
 
 - 系统要求：Windows 10 / 11
 - 首次运行会在 exe 旁边生成 `config.json`（保存你的偏好设置）
