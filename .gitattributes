@@ -1,0 +1,16 @@
+# 统一换行，避免 Windows 上改一行 diff 整个文件
+* text=auto
+
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+LICENSE text eol=lf
+*.bat text eol=crlf
+
+# 二进制，别做换行转换
+*.ico binary
+*.png binary
+*.jpg binary
+*.heic binary
+*.qm binary

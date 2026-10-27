@@ -1,0 +1,31 @@
+# 虚拟环境与缓存
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# 本机配置与缓存（含高德 Key 密文 / 真实坐标轨迹）
+config.json
+geo_cache.json
+
+# 真实照片：含拍摄地点等隐私，绝不提交
+原始测试照片/
+
+# 开发用样片与调试截图（README 配图在 docs/，是脚本合成的假样片）
+samples/
+
+# 打包产物
+build/
+dist/
+*.spec
+
+# 编辑器 / 操作系统杂物
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# WorkBuddy 运行时
+.workbuddy/

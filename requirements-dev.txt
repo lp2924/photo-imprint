@@ -1,0 +1,7 @@
+-r requirements.txt
+
+# 打包
+pyinstaller>=6.0
+
+# tools/make_samples.py 需要写 EXIF
+piexif>=1.1
