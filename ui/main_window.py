@@ -70,6 +70,8 @@ COLOR_PRESETS = [
 DEFAULT_COLOR = (255, 255, 255)
 DARK_COLOR = (58, 58, 56)
 ACCENT = "#185FA5"
+# 高德「我的应用」页：创建应用、看 Key 都在这里
+AMAP_KEY_URL = "https://console.amap.com/dev/key/app"
 
 # 描边色常用就这几个，其余交给取色器
 OUTLINE_PRESETS = [
@@ -1195,19 +1197,29 @@ class MainWindow(QMainWindow):
         dialog = QDialog(self)
         dialog.setWindowTitle("设置")
         dialog.setWindowIcon(settings_icon())
-        dialog.setMinimumWidth(420)
+        dialog.setMinimumWidth(440)
         box = QVBoxLayout(dialog)
         box.setContentsMargins(18, 16, 18, 14)
         box.setSpacing(8)
 
         box.addWidget(self._section("高德地图 Key"))
         tip = QLabel(
-            "在 高德开放平台 → 应用管理 → 我的应用 里申请「Web服务」类型的 Key。\n"
+            "路径：高德开放平台 → 应用管理 → 我的应用\n"
+            "添加 Key 时「服务平台」要选 Web服务\n"
             "不填也能用，只是水印上会显示经纬度而不是地名。"
         )
         tip.setObjectName("hint")
         tip.setWordWrap(True)
         box.addWidget(tip)
+
+        # 直接给个能点的入口，省得用户照着文字去翻控制台
+        link = QLabel(f'<a href="{AMAP_KEY_URL}" style="color:{ACCENT}; text-decoration:none;">'
+                      "打开高德控制台申请 Key ↗</a>")
+        link.setTextFormat(Qt.RichText)
+        link.setOpenExternalLinks(True)  # 交给系统默认浏览器
+        link.setCursor(Qt.PointingHandCursor)
+        link.setToolTip(AMAP_KEY_URL)
+        box.addWidget(link)
 
         edit = QLineEdit(self._api_key)
         edit.setEchoMode(QLineEdit.Password)

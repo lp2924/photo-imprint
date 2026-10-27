@@ -80,6 +80,8 @@ python -m venv .venv
 3. 添加 Key，**服务平台选「Web服务」**（不是「Web端(JS API)」）
 4. 复制 Key，粘到程序的「设置」里
 
+程序「设置」弹窗里也有直达链接（「打开高德控制台申请 Key ↗」），点一下就用默认浏览器打开上面那个页面。
+
 ![设置弹窗](docs/screenshot-settings.png)
 
 ## 命令行

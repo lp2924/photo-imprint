@@ -58,10 +58,12 @@ def main() -> int:
     window.refresh_preview()
     pump(app, 3.0)
     window.grab().save(str(OUT / "screenshot-main.png"))
+    print("screenshot-main.png", flush=True)
 
     window._set_place_style("full")
     pump(app, 2.5)
     window.grab().save(str(OUT / "screenshot-full.png"))
+    print("screenshot-full.png", flush=True)
 
     # 设置弹窗是模态的，临时把 exec 换成 show 才能截到
     original_exec = QDialog.exec
