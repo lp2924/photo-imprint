@@ -1203,11 +1203,13 @@ class MainWindow(QMainWindow):
         box.setSpacing(8)
 
         box.addWidget(self._section("高德地图 Key"))
+        # 三行各自成段留出行距，纯 \n 挤成一坨读着费劲
         tip = QLabel(
-            "路径：高德开放平台 → 应用管理 → 我的应用\n"
-            "添加 Key 时「服务平台」要选 Web服务\n"
-            "不填也能用，只是水印上会显示经纬度而不是地名。"
+            '<p style="margin:0 0 7px 0;">路径：高德开放平台 → 应用管理 → 我的应用</p>'
+            '<p style="margin:0 0 7px 0;">添加 Key 时「服务平台」要选 Web服务</p>'
+            '<p style="margin:0;">不填也能用，只是水印上会显示经纬度而不是地名。</p>'
         )
+        tip.setTextFormat(Qt.RichText)
         tip.setObjectName("hint")
         tip.setWordWrap(True)
         box.addWidget(tip)
